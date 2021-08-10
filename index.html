@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rain Drops</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section>
+      <img id="background" alt="background" src="" />
+    </section>
+    <script src="rainyday.js"></script>
+    <script>
+      function rain() {
+        const image = document.getElementById('background');
+        image.onload = function() {
+          var rainDay = new RainyDay({
+            image: this,
+            blur: 0,
+            enableSizeChange: true
+          })
+          RainyDay.rain([
+            [5,2,2],
+            [6, 5, 1],
+            [3, 3, 0.88],
+          ],100)
+        }
+        image.src = 'bg.jpg';
+      }
+
+      rain();
+    </script>
+  </body>
+</html>
